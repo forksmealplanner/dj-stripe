@@ -2804,7 +2804,7 @@ class Product(StripeObject):
         "A list of up to 5 attributes that each SKU can provide values for "
         '(e.g., `["color", "size"]`). Only applicable to products of `type=good`.'
     ))
-    caption = StripeCharField(null=True, max_length=5000, help_text=(
+    caption = StripeCharField(null=True, max_length=5000, stripe_required=False, help_text=(
         "A short one-line description of the product, meant to be displayable"
         "to the customer. Only applicable to products of `type=good`."
     ))
@@ -2825,7 +2825,7 @@ class Product(StripeObject):
         "Whether this product is a shipped good. "
         "Only applicable to products of `type=good`."
     ))
-    url = StripeCharField(max_length=799, null=True, help_text=(
+    url = StripeCharField(max_length=799, null=True, stripe_required=False, help_text=(
         "A URL of a publicly-accessible webpage for this product. "
         "Only applicable to products of `type=good`."
     ))
